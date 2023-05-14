@@ -14,7 +14,7 @@ The Project Initializer is a Python script that facilitates the initialization o
 1. Make sure you have Python installed on your system.
 2. Clone this repository to your machine: `git clone https://github.com/novenopatch/project-initializer.git`
 3. Navigate to the project directory: `cd project-initializer`
-4. Install the required dependencies: `pip install -r requirements.txt`
+4. Install the required dependencies: `pip install -r src/requirements.txt`
 
 ## Usage
 
