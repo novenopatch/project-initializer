@@ -2,7 +2,7 @@ import json
 import os
 from ProjectInitializer import ProjectInitializer
 def save_config(project_types, css_frameworks):
-    config = {
+    config:dict = {
         "project_types": project_types,
         "css_frameworks": css_frameworks
     }
@@ -20,7 +20,7 @@ def _main():
         project_types, css_frameworks = load_config()
     else:
         # Options de projet par défaut
-        project_types = [
+        project_types:list[dict] = [
             {
                 "name": "React",
                 "command": "npx create-react-app {project_name}",
@@ -58,7 +58,7 @@ def _main():
             }
         ]
 
-        css_frameworks = [
+        css_frameworks:list[dict] = [
             {
                 "name": "Bootstrap",
                 "command": "--use-bootstrap"
@@ -71,10 +71,8 @@ def _main():
                 "name": "Aucun (CSS de base)",
                 "command": ""
             }
-            # Ajouter de nouveaux frameworks CSS ici
         ]
 
-        # Enregistrer les options par défaut dans le fichier de configuration
         save_config(project_types, css_frameworks)
 
     initializer = ProjectInitializer(project_types, css_frameworks)

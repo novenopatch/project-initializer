@@ -19,7 +19,7 @@ based on user choices.
 
 ## Usage
 
-1. Run the script using the following command: `python src/setup.py `
+1. Run the script using the following command: `python setup.py `
 2. Follow the on-screen instructions to choose the project type, CSS framework, and project name.
 3. The script will initialize the project using the appropriate system commands.
 4. Once completed, you will find your project created in the current directory.
