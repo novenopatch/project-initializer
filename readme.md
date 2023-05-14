@@ -1,6 +1,6 @@
 # Project Initializer
 
-The Project Initializer is a Python script that facilitates the initialization of new projects by providing predefined options for project types and CSS frameworks. It uses system commands to create projects file:///home/kira/Documents/template/project-initializer/.git/workflows/build.yml
+The Project Initializer is a Python script that facilitates the initialization of new projects by providing predefined options for project types and CSS frameworks. It uses system commands to create projects
 based on user choices.
 
 ## Features
