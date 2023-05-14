@@ -1,5 +1,6 @@
 import os
 import json
+import re
 
 class ProjectInitializer:
     def __init__(self, project_types, css_frameworks):
@@ -20,6 +21,8 @@ class ProjectInitializer:
 
     def validate_project_name(self, project_name):
         if not project_name:
+            return False
+        if re.search(r'[<>:"/\\|?*\x00-\x1F]', project_name):
             return False
         return True
 
