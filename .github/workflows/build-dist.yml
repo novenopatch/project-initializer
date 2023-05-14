@@ -37,5 +37,6 @@ jobs:
         with:
           name: project-initializer
           path: |
-            dist/project-initializer_windows.exe
             dist/project-initializer_windows
+            dist/project-initializer_windows.exe
+            
