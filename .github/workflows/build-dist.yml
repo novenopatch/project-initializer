@@ -1,0 +1,42 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: pip install pyinstaller
+
+      - name: Build executable for Windows
+        run: pyinstaller --onefile  --name project-initializer_windows src/setup.py
+        if: runner.os == 'Windows'
+
+      - name: Build executable for Linux
+        run: pyinstaller --onefile --name project-initializer_linux src/setup.py
+        if: runner.os == 'Linux'
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: myscript
+          path: |
+            dist/project-initializer_windows.exe
+            dist/project-initializer_windows
+
