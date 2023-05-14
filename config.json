@@ -1,1 +1,44 @@
-{"project_types": [{"name": "React", "command": "npx create-react-app {project_name}", "css_frameworks": true}, {"name": "React avec TypeScript (TS)", "command": "npx create-react-app {project_name} --template typescript", "css_frameworks": true}, {"name": "Symfony api", "command": "composer create-project symfony/website-skeleton {project_name}", "css_frameworks": false}, {"name": "Symfony webapp", "command": "composer create-project symfony/website-skeleton {project_name} --webapp", "css_frameworks": false}, {"name": "Laravel", "command": "composer create-project --prefer-dist laravel/laravel {project_name}", "css_frameworks": false}, {"name": "Django", "command": "django-admin startproject {project_name}", "css_frameworks": false}, {"name": "Express.js", "command": "npx express-generator --no-view {project_name}", "css_frameworks": false}], "css_frameworks": [{"name": "Bootstrap", "command": "--use-bootstrap"}, {"name": "Tailwind CSS", "command": "--use-tailwind"}, {"name": "Aucun (CSS de base)", "command": ""}]}
+{
+  "project_types": [
+    {
+      "name": "React",
+      "command": "npx create-react-app {project_name}",
+      "css_frameworks": true
+    },
+    {
+      "name": "React avec TypeScript (TS)",
+      "command": "npx create-react-app {project_name} --template typescript",
+      "css_frameworks": true
+    },
+    {
+      "name": "Symfony api",
+      "command": "composer create-project symfony/website-skeleton {project_name}",
+      "css_frameworks": false
+    },
+    {
+      "name": "Symfony webapp",
+      "command": "composer create-project symfony/website-skeleton {project_name} --webapp",
+      "css_frameworks": false
+    },
+    {
+      "name": "Laravel",
+      "command": "composer create-project --prefer-dist laravel/laravel {project_name}",
+      "css_frameworks": false
+    },
+    {
+      "name": "Django",
+      "command": "django-admin startproject {project_name}",
+      "css_frameworks": false
+    },
+    {
+      "name": "Express.js",
+      "command": "npx express-generator --no-view {project_name}",
+      "css_frameworks": false
+    }
+  ],
+  "css_frameworks": [
+    { "name": "Bootstrap", "command": "--use-bootstrap" },
+    { "name": "Tailwind CSS", "command": "--use-tailwind" },
+    { "name": "Aucun (CSS de base)", "command": "" }
+  ]
+}
