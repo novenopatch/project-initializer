@@ -1,15 +1,18 @@
 import json
 import os
 from ProjectInitializer import ProjectInitializer
-def save_config(project_types, css_frameworks):
-    config:dict = {
+
+
+def save_config(project_types:list[dict], css_frameworks:list[dict]):
+    config: dict[str,list[dict]] = {
         "project_types": project_types,
         "css_frameworks": css_frameworks
     }
     with open("config.json", "w") as file:
         json.dump(config, file)
 
-def load_config():
+
+def load_config() -> type[list[dict]]:
     with open("config.json", "r") as file:
         config = json.load(file)
     return config.get("project_types"), config.get("css_frameworks")
@@ -20,7 +23,7 @@ def _main():
         project_types, css_frameworks = load_config()
     else:
         # Options de projet par défaut
-        project_types:list[dict] = [
+        project_types: list[dict] = [
             {
                 "name": "React",
                 "command": "npx create-react-app {project_name}",
@@ -32,15 +35,15 @@ def _main():
                 "css_frameworks": True
             },
             {
-            "name": "Symfony api",
-            "command": "composer create-project symfony/website-skeleton {project_name}",
-            "css_frameworks": False
-        },
-        {
-            "name": "Symfony webapp",
-            "command": "composer create-project symfony/website-skeleton {project_name} --webapp",
-            "css_frameworks": False
-        },
+                "name": "Symfony api",
+                "command": "composer create-project symfony/website-skeleton {project_name}",
+                "css_frameworks": False
+            },
+            {
+                "name": "Symfony webapp",
+                "command": "composer create-project symfony/website-skeleton {project_name} --webapp",
+                "css_frameworks": False
+            },
             {
                 "name": "Laravel",
                 "command": "composer create-project --prefer-dist laravel/laravel {project_name}",
@@ -58,7 +61,7 @@ def _main():
             }
         ]
 
-        css_frameworks:list[dict] = [
+        css_frameworks: list[dict] = [
             {
                 "name": "Bootstrap",
                 "command": "--use-bootstrap"
@@ -77,7 +80,7 @@ def _main():
 
     initializer = ProjectInitializer(project_types, css_frameworks)
     initializer.init_project()
-    
-    
+
+
 if __name__ == "__main__":
-   _main()
+    _main()
